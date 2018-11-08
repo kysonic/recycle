@@ -157,7 +157,7 @@ var commonPrototype = {
            var optionsArray = optionsString.split(';');
            optionsArray.forEach(function (item) {
                var itemSplit = item.split(':');
-               options[itemSplit[0]] = itemSplit[1].trim();
+               options[itemSplit[0].trim()] = itemSplit[1].trim();
            });
 
            return options;
