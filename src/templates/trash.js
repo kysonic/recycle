@@ -1,5 +1,8 @@
 import AFRAME from 'AFRAME';
 
+import '../systems/trash';
+import '../components/trash';
+
 AFRAME.registerTemplate('trash', (id) => `
     <a-entity id="trash-${id}"
               trash

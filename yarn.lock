@@ -195,6 +195,12 @@ acorn@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.0.2.tgz#6a459041c320ab17592c6317abbfdf4bbaa98ca4"
 
+aframe-animation-component@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/aframe-animation-component/-/aframe-animation-component-5.1.2.tgz#f08becfcde91b0c9d2bf308b03cbdacd85c320d0"
+  dependencies:
+    animejs "2.2.0"
+
 aframe-event-set-component@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/aframe-event-set-component/-/aframe-event-set-component-4.1.2.tgz#86bdadd26e20eea3e78b3fb257a0d278b4ab76b7"
@@ -262,6 +268,10 @@ amdefine@>=0.0.4:
 an-array@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/an-array/-/an-array-1.0.0.tgz#c125a5bb8257778e35f4b4f6aa9c7d0fa9e42665"
+
+animejs@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/animejs/-/animejs-2.2.0.tgz#35eefdfc535b81949c9cb06f0b3e60c02e6fdc80"
 
 ansi-escapes@^3.0.0:
   version "3.1.0"
