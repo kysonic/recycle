@@ -13,16 +13,29 @@ AFRAME.registerComponent('countdown', {
         interval: {
             type: 'number',
             default: 500
+        },
+        animation: {
+            type: 'string',
+            default: 'property: scale; dir: fill; easing: easeInSine; loop: false; from: 2 2 2; to: 0 0 0;'
+        },
+        textStyles: {
+            type: 'string',
+            default: 'align: center; width: 3; color: red; font: https://cdn.aframe.io/fonts/Roboto-msdf.json'
         }
     },
 
     init() {
+        this.setupAnimation();
         this.bindListeners();
         this.styleText();
     },
 
+    setupAnimation() {
+        this.el.setAttribute('anime__scale', `${this.data.animation}dur: ${this.data.interval - 100}; startEvents: countdown-run-phrase`);
+    },
+
     styleText() {
-        this.el.setAttribute('text', 'align: center; width: 3; color: red;');
+        this.el.setAttribute('text', this.data.textStyles);
     },
 
     bindListeners() {
@@ -52,6 +65,7 @@ AFRAME.registerComponent('countdown', {
         if(this.data.currentItem >= this.data.text.length) {
             return this.stop();
         }
+        this.el.emit('countdown-run-phrase');
         this.el.setAttribute('text', {value: this.data.text[this.data.currentItem]});
         this.data.currentItem++;
     },

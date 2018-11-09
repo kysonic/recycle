@@ -18,7 +18,8 @@ module.exports = {
     },
     resolve: {
         alias: {
-            AFRAME: path.join(__dirname, 'vendor', '/aframe.js')
+            AFRAME: path.join(__dirname, 'vendor', '/aframe.js'),
+            'aframe-anime': path.join(__dirname, 'vendor', '/aframe-animation-component.js')
         },
         extensions: [".js", ".jsx"]
     },

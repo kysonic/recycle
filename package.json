@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "aframe": "^0.9.0",
-    "aframe-animation-component": "^5.1.2",
     "aframe-event-set-component": "^4.1.2",
     "aframe-extras": "^4.2.0",
     "aframe-physics-extras": "^0.1.3",

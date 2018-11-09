@@ -3,10 +3,11 @@ import AFRAME from 'AFRAME';
 import '../components/game';
 import '../components/countdown';
 
-const COUNTDOWN_TEXT = ['READY', '3', '2', '1', 'Recycle!'];
+const COUNTDOWN_TEXT = ['READY', '3', '2', '1', 'RECYCLE!'];
 
 AFRAME.registerTemplate('frame1', `
-    <a-entity position="0 2 -2" countdown="text: ${COUNTDOWN_TEXT}; interval: 1000"></a-entity>    
+    <a-entity color="red" position="0 2 -2" countdown="text: ${COUNTDOWN_TEXT}; interval: 1000" ></a-entity>   
+    
     <!-- Trash bins -->
     <a-template id="trash-bin" options="position: 0 0 -2; type: glass"></a-template>
     <a-template id="trash-bin" options="position: -1 0 -2; type: plastic"></a-template>

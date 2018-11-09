@@ -1,5 +1,4 @@
 import 'AFRAME';
-
 // Third part
 import 'aframe-event-set-component';
 import 'aframe-extras';
@@ -7,6 +6,8 @@ import 'super-hands';
 import 'aframe-physics-system';
 import 'aframe-physics-extras';
 import 'aframe-state-component';
+import 'aframe-state-component';
+import 'aframe-anime';
 // State
 import './states/index';
 // Components
