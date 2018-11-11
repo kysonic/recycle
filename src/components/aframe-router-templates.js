@@ -26,16 +26,16 @@ ATemplate.prototype.template = function (options) {
  * @param id - id of new element added on Scene
  * @returns {Node}
  */
-ATemplate.prototype.init = function (id, options) {
-    var clone = document.importNode(this.template(options).content, true);
+ATemplate.prototype.init = function (options) {
     this.scene = document.querySelector('a-scene');
     if (!this.scene) {
         throw new Error('Scene is not found');
     }
-    clone.id = id || this.generateId();
-    this.scene.appendChild(clone);
+    var clone = document.importNode(this.template(options).content, true);
+    var child = clone.children[0];
+    this.scene.appendChild(child);
 
-    return clone;
+    return child;
 };
 
 AFRAME.registerTemplate = function (name, HTML) {
@@ -93,27 +93,22 @@ AFRAME.registerSystem('router', {
             return false;
         }
         if (!this.data.routes[routeId]) {
-            throw new Error('Route with following id: ' + route.id + ' is not registred.');
+            throw new Error('Route with following id: ' + routeId + ' is not registred.');
         }
         this.data.previous = this.data.current;
         this.data.routes[this.data.previous].detach();
 
         this.data.current = routeId;
         this.data.routes[this.data.current].attach();
+
+        this.el.emit('route-changed', routeId);
     }
 });
 
 var commonPrototype = {
     closestScene: {
         value: function closest() {
-            var element = this;
-            while (element) {
-                if (element.isScene) {
-                    break;
-                }
-                element = element.parentElement;
-            }
-            return element;
+            return document.querySelector('a-scene');
         }
     },
 
@@ -196,6 +191,7 @@ AFRAME.registerElement('a-route', {
                 if (this.children.length) {
                     this.attachNodes(this.children, 'routeId');
                 }
+
                 var templateName = this.getAttribute('template');
 
                 if (!templateName) {
@@ -284,7 +280,7 @@ AFRAME.registerElement('a-template', Object.assign({
 
         attach: {
             value: function () {
-                var templateName = this.id;
+                var templateName = this.getAttribute('name');
 
                 if (!templateName) {
                     return false;
@@ -306,7 +302,7 @@ AFRAME.registerElement('a-template', Object.assign({
 
         getNodes: {
             value: function () {
-                var templateName = this.id;
+                var templateName = this.getAttribute('name');
 
                 if (!templateName) {
                     return false;

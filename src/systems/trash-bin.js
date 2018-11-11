@@ -1,13 +1,21 @@
 import AFRAME from 'AFRAME';
 
 AFRAME.registerSystem('trash-bin', {
-    schema: {
-        bins: {
-            type: 'array',
-            default: []
-        }
+    bins: [],
+
+    init() {
+        this.createBin = this.createBin.bind(this);
     },
+
+    createBins(trashBins) {
+        trashBins.forEach(this.createBin);
+    },
+
+    createBin(binData) {
+        AFRAME.templates['trash-bin'].init(binData);
+    },
+
     registerBin(bin) {
-        this.data.bins.push(bin);
+        this.bins.push(bin);
     }
 });

@@ -1,11 +1,11 @@
 import AFRAME from 'AFRAME';
-
-const GAME_STATES = ['not-started', 'playing', 'finished'];
+import {GAME_STATES} from '../consts';
 
 AFRAME.registerState({
     initialState: {
         score: 0,
-        gameState: 'not-started'
+        gameState: GAME_STATES.notStarted,
+        currentWave: 1,
     },
 
     handlers: {
@@ -15,6 +15,18 @@ AFRAME.registerState({
 
         increaseScore(state, action) {
             state.score += action.points;
+        },
+
+        setGameState(state, action) {
+            state.gameState = action.gameState;
+        },
+
+        increaseCurrentWave(state, action) {
+            state.currentWave++;
+        },
+
+        setCurrentWave(state, action) {
+            state.currentWave = action.currentWave;
         }
     }
 });

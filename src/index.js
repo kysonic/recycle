@@ -8,12 +8,16 @@ import 'aframe-physics-extras';
 import 'aframe-state-component';
 import 'aframe-state-component';
 import 'aframe-anime';
+import 'aframe-text-geometry-component';
 // State
 import './states/index';
 // Components
 import './components/aframe-router-templates';
+import './components/aframe-emit-event';
 import './components/controls-checker';
+import './components/game-manager';
 //Templates
 import './templates/controls'
 import './templates/trash-bin'
-import './templates/frame1'
+import './templates/start-screen'
+import './templates/game-field'

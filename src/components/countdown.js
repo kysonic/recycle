@@ -16,26 +16,22 @@ AFRAME.registerComponent('countdown', {
         },
         animation: {
             type: 'string',
-            default: 'property: scale; dir: fill; easing: easeInSine; loop: false; from: 2 2 2; to: 0 0 0;'
+            default: 'property: scale; easing: easeInSine; from: 0 0 0; to: 2 2 2;'
         },
         textStyles: {
             type: 'string',
             default: 'align: center; width: 3; color: red; font: https://cdn.aframe.io/fonts/Roboto-msdf.json'
+        },
+        latestDelay: {
+            type: 'number',
+            default: 1000
         }
     },
 
     init() {
-        this.setupAnimation();
         this.bindListeners();
+        this.setupAnimation();
         this.styleText();
-    },
-
-    setupAnimation() {
-        this.el.setAttribute('anime__scale', `${this.data.animation}dur: ${this.data.interval - 100}; startEvents: countdown-run-phrase`);
-    },
-
-    styleText() {
-        this.el.setAttribute('text', this.data.textStyles);
     },
 
     bindListeners() {
@@ -45,6 +41,14 @@ AFRAME.registerComponent('countdown', {
 
         this.el.sceneEl.addEventListener('start-countdown', this.start);
         this.el.sceneEl.addEventListener('stop-countdown', this.stop);
+    },
+
+    setupAnimation() {
+        this.el.setAttribute('anime__scale', `${this.data.animation}dur: ${this.data.interval}; startEvents: countdown-run-phrase; pauseEvents: countdown-pause-phrase`);
+    },
+
+    styleText() {
+        this.el.setAttribute('text', this.data.textStyles);
     },
 
     remove() {
@@ -66,14 +70,19 @@ AFRAME.registerComponent('countdown', {
             return this.stop();
         }
         this.el.emit('countdown-run-phrase');
-        this.el.setAttribute('text', {value: this.data.text[this.data.currentItem]});
-        this.data.currentItem++;
+        setTimeout(()=>{
+            this.el.setAttribute('text', {value: this.data.text[this.data.currentItem]});
+            this.data.currentItem++;
+        }, 100);
+
     },
 
     stop() {
         this.data.currentItem = 0;
         clearInterval(this.interval);
-        this.el.setAttribute('text', {value: ''});
         this.el.emit('countdown-stopped');
+        setTimeout(()=> {
+            this.el.setAttribute('text', {value: ''});
+        }, this.data.latestDelay)
     }
 });
