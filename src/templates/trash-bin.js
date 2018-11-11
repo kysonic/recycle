@@ -7,7 +7,7 @@ import '../components/trash-bin-collider';
 
 
 AFRAME.registerTemplate('trash-bin', ({type, position, color}) => `
-    <a-entity id="trash-bin-${type}" position="${position}" trash-bin >
+    <a-entity id="trash-bin-${type}" position="${position}" trash-bin="type: ${type}" >
         <a-box class="left" static-body shadow="receive: false" position="-0.25 0 0" width="0.01" height="1" depth="0.5" material="color: ${color}"></a-box>
         <a-box class="right" static-body  shadow="receive: false" position="0.25 0 0" width="0.01" height="1" depth="0.5" material="color: ${color}"></a-box>
         <a-box class="forward" static-body shadow="receive: false"  position="0 0 -0.25" width="0.5" height="1" depth="0.01" material="color: ${color}"></a-box>
@@ -17,9 +17,9 @@ AFRAME.registerTemplate('trash-bin', ({type, position, color}) => `
                static-body 
                collision-filter="collisionForces: false"
                position="0 0 0" 
-               width="0.45"
+               width="0.3"
                height="0.3"
-               depth="0.45"
+               depth="0.3"
                color="red"
                trasnparent="true"
                opacity="0.2">

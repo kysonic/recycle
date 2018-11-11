@@ -38,9 +38,9 @@ export default function waveGenerator(waveNumber) {
             count: trashConfig.startCount + Math.round((waveNumber - 1) * trashConfig.startCount * wavesConfig.waveCoefficient),
             types: bins.map(bin => bin.type),
             maxPosition: {
-                x: 3,
+                x: 1,
                 y: 2,
-                z: (binsConfig.startFrom - (waveNumber * wavesConfig.waveCoefficient) + 0.5)
+                z: (binsConfig.startFrom - (waveNumber * wavesConfig.waveCoefficient) + 0.75)
             }
         }
     }
