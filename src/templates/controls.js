@@ -21,6 +21,6 @@ AFRAME.registerTemplate('controls', `
                                   colliderEndEventProperty: clearedEls;"></a-mixin>
     </a-sub-assets>
     <a-entity id="controls" controls-checker>
-        <a-camera id="camera" wasd-controls-enabled="false" positon="0 1.6 0"></a-camera>
+        <a-camera id="camera" positon="0 1.6 0"></a-camera>
     </a-entity>
 `);

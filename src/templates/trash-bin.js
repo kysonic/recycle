@@ -17,12 +17,12 @@ AFRAME.registerTemplate('trash-bin', ({type, position, color}) => `
                static-body 
                collision-filter="collisionForces: false"
                position="0 0 0" 
-               width="0.3"
-               height="0.3"
-               depth="0.3"
+               width="0.4"
+               height="0.4"
+               depth="0.5"
                color="red"
                trasnparent="true"
-               opacity="0.2">
+               opacity="0">
         </a-box>
     </a-entity>    
 `);
