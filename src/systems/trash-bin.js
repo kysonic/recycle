@@ -17,5 +17,12 @@ AFRAME.registerSystem('trash-bin', {
 
     registerBin(bin) {
         this.bins.push(bin);
+    },
+
+    dropBins() {
+        this.bins.forEach((bin) => {
+           this.el.removeChild(bin.el);
+        });
+        this.bins = [];
     }
 });

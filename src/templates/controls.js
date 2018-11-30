@@ -12,15 +12,18 @@ AFRAME.registerTemplate('controls', `
                      oculus-touch-controls="hand: left"
                      windows-motion-controls="hand: left">
             </a-mixin>
-            <a-mixin id="point" raycaster="showLine: true; objects: .dnd; far: 5"
+            <a-mixin id="point" raycaster="showLine: true; objects: .dnd; far: 10"
                      collision-filter="collisionForces: false"
-                     static-body="shape: sphere; sphereRadius: 0.001"
+                     static-body="shape: sphere; sphereRadius: 1"
                      super-hands="colliderEvent: raycaster-intersection;
                                   colliderEventProperty: els;
-                                  colliderEndEvent:raycaster-intersection-cleared;
-                                  colliderEndEventProperty: clearedEls;"></a-mixin>
+                                  colliderEndEvent: raycaster-intersection-cleared;
+                                  colliderEndEventProperty: clearedEls;"
+                                  grabStartButtons="Button press"
+                                  grabStartButtons="Button release"
+                                  ></a-mixin>
     </a-sub-assets>
     <a-entity id="controls" controls-checker>
-        <a-camera id="camera" positon="0 1.6 0"></a-camera>
+        <a-camera id="camera" positon="0 1.6 0" restrict-position></a-camera>
     </a-entity>
 `);

@@ -15,6 +15,7 @@ import './states/index';
 import './components/aframe-router-templates';
 import './components/aframe-emit-event';
 import './components/controls-checker';
+import './components/restrict-position';
 import './components/game-manager';
 //Templates
 import './templates/controls'

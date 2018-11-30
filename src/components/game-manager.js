@@ -1,6 +1,5 @@
 import AFRAME from 'AFRAME';
 import {GAME_STATES} from '../consts';
-import waveGenerator from '../lib/wave-generator';
 
 AFRAME.registerComponent('game-manager', {
     init() {
@@ -12,7 +11,6 @@ AFRAME.registerComponent('game-manager', {
         if(GAME_STATES.notStarted === this.el.systems.state.state.gameState) {
             this.el.emit('setGameState', {gameState: GAME_STATES.inProgress});
             this.el.systems.router.changeRoute('game-field');
-            this.el.currentWaveConfig = waveGenerator(this.el.systems.state.state.currentWave);
         }
     }
 });
