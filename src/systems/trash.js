@@ -44,7 +44,7 @@ AFRAME.registerSystem('trash', {
     },
 
     generateRandomPosition(maxPosition) {
-        return `${generateRandomInt(-maxPosition.x, maxPosition.x)} ${generateRandomInt(1, maxPosition.y)} ${maxPosition.z}`
+        return `${generateRandomInt(-maxPosition.x, maxPosition.x)} ${generateRandomInt(1, maxPosition.y)} ${generateRandomInt(-1, maxPosition.z)}`
     },
 
     createTrash(trashData) {

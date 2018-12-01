@@ -18,7 +18,7 @@ const getTrashBinCountByWave = function (waveNumber) {
 const generateBins = function (waveNumber) {
     const trashBinsCount = getTrashBinCountByWave(waveNumber);
     return TRASH_TYPES.slice(0, trashBinsCount).map((trashBin, i) => {
-        const z = binsConfig.startFrom - Math.round(waveNumber * wavesConfig.waveCoefficient);
+        const z = binsConfig.startFrom - waveNumber * binsConfig.step;
         const plusMinus = (i % 2) ? - 1 : 1;
         let x = binsConfig.gap * plusMinus * (Math.floor(i / 2) + i % 2);
         if(trashBinsCount % 2 === 0) {
