@@ -24,6 +24,7 @@ AFRAME.registerComponent('controls-checker', {
         this.isDesktop = this.headsetConnected && !this.isMobile;
         this.isGearVR = utils.device.isGearVR();
         this.isOculusGo = false; //utils.device.isOculusGo();
+        this.camera = document.getElementById('camera');
 
         this.setupControls();
     },
