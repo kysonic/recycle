@@ -1,4 +1,4 @@
-import AFRAME, {utils} from 'AFRAME';
+import AFRAME, {utils} from 'aframe';
 
 AFRAME.registerComponent('controls-checker', {
     schema: {

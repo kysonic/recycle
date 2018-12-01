@@ -1,4 +1,4 @@
-import AFRAME from 'AFRAME';
+import AFRAME from 'aframe';
 
 AFRAME.registerTemplate('button', ({text='BUTTON', position='0 1 -2', event}) => `
     <a-text position="${position}"
@@ -24,7 +24,6 @@ AFRAME.registerTemplate('button', ({text='BUTTON', position='0 1 -2', event}) =>
             height="0.5" 
             depth="0.1" 
             >
-               
         </a-box>
     </a-text> 
 `);

@@ -1,4 +1,4 @@
-import 'AFRAME';
+import 'aframe';
 // Third part
 import 'aframe-event-set-component';
 import 'aframe-extras';

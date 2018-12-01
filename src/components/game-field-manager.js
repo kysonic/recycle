@@ -1,4 +1,4 @@
-import AFRAME from 'AFRAME';
+import AFRAME from 'aframe';
 import '../templates/trash';
 import '../templates/trash-bin';
 import waveGenerator from '../lib/wave-generator';
@@ -24,7 +24,6 @@ AFRAME.registerComponent('game-field-manager', {
         // Wave
         this.el.sceneEl.emit('increaseCurrentWave');
         // Countdown
-        console.log(this.el.sceneEl.systems.state.state.currentWave);
         if(this.el.sceneEl.systems.state.state.currentWave > 1) {
             this.countdown.setAttribute('countdown', {text: [`Level ${this.el.sceneEl.systems.state.state.currentWave}`, 'READY', 'STEADY', 'GO!']});
         }

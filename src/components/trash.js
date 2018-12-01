@@ -1,4 +1,4 @@
-import AFRAME from 'AFRAME';
+import AFRAME from 'aframe';
 
 AFRAME.registerComponent('trash', {
     schema: {
@@ -11,10 +11,11 @@ AFRAME.registerComponent('trash', {
             default: 10000
         }
     },
+
     init() {
         this.el.isTrash = true;
         this.system.registerTrash(this);
-        this.setTimeout();
+        //this.setTimeout();
     },
 
     setTimeout() {

@@ -1,4 +1,4 @@
-import AFRAME from 'AFRAME';
+import AFRAME from 'aframe';
 
 import '../components/countdown';
 import '../components/game-field-manager';

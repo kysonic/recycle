@@ -1,4 +1,4 @@
-import AFRAME from 'AFRAME';
+import AFRAME from 'aframe';
 
 AFRAME.registerComponent('countdown', {
     schema: {
