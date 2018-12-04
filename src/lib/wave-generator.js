@@ -40,7 +40,7 @@ export default function waveGenerator(waveNumber) {
             maxPosition: {
                 x: 1,
                 y: 2,
-                z: (binsConfig.startFrom - (waveNumber * wavesConfig.waveCoefficient) + 0.75)
+                z: (binsConfig.startFrom - (waveNumber * wavesConfig.waveCoefficient))
             }
         }
     }

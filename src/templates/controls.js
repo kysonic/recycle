@@ -15,7 +15,7 @@ AFRAME.registerTemplate('controls', `
             <a-mixin id="point" raycaster="showLine: true; far: 10; objects: .dnd"
                      collision-filter="collisionForces: false"
                      static-body="shape: sphere; sphereRadius: 0.01"
-                     range-controls
+                     throw-controls
                      super-hands="colliderEvent: raycaster-intersection;
                                   colliderEventProperty: els;
                                   colliderEndEvent: raycaster-intersection-cleared;
