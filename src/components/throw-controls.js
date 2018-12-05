@@ -43,7 +43,6 @@ AFRAME.registerComponent('throw-controls', {
         if(e.keyCode === 32 && !this.keyIsDown) {
             this.startForceAccumulationTime = Date.now();
             this.keyIsDown = true;
-            console.log('force-range-start');
             this.forceRange.emit('force-range-start');
         }
     },
