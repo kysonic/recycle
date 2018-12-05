@@ -25,6 +25,16 @@ AFRAME.registerTemplate('controls', `
                                   ></a-mixin>
     </a-sub-assets>
     <a-entity id="controls" controls-checker>
-        <a-camera id="camera" positon="0 1.6 0" look-controls="pointerLockEnabled: true" restrict-position></a-camera>
+        <a-camera id="camera" positon="0 1.6 0" look-controls="pointerLockEnabled: true" restrict-position>
+            <a-plane id="forceRange" 
+            force-range 
+            color="red" 
+            height="0.1" 
+            width="10" 
+            position="0 1.4 -2"
+            scale="0 1 0"
+            anime="property: scale; from: 0 1 0; to: 1 1 0; dur: 2500; startEvents: force-range-start; pauseEvents: force-range-stop"
+            ></a-plane>
+        </a-camera>
     </a-entity>
 `);

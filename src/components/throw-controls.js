@@ -1,4 +1,5 @@
 import AFRAME from 'aframe';
+import config from '../config';
 
 AFRAME.registerComponent('throw-controls', {
     grabbed: null,
@@ -10,6 +11,7 @@ AFRAME.registerComponent('throw-controls', {
     init() {
         this.pointer = this.el;
         this.camera = document.getElementById('camera');
+        this.forceRange = camera.querySelector('#forceRange');
 
         this.keyDownHandler = this.keyDownHandler.bind(this);
         this.keyUpHandler = this.keyUpHandler.bind(this);
@@ -41,6 +43,8 @@ AFRAME.registerComponent('throw-controls', {
         if(e.keyCode === 32 && !this.keyIsDown) {
             this.startForceAccumulationTime = Date.now();
             this.keyIsDown = true;
+            console.log('force-range-start');
+            this.forceRange.emit('force-range-start');
         }
     },
 
@@ -48,9 +52,14 @@ AFRAME.registerComponent('throw-controls', {
         this.force = 0;
         if(e.keyCode === 32) {
             this.force = ((Date.now() - this.startForceAccumulationTime) / 1000) * 2 + 2;
+            if(this.force > config.maxForce) {
+                this.force = config.maxForce;
+            }
             this.applyImpulse();
             this.forceGrabEnd(e);
             this.keyIsDown = false;
+            this.forceRange.emit('force-range-stop');
+            this.forceRange.object3D.scale.set(0,1,0);
         }
     },
 

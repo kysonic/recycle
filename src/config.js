@@ -1,4 +1,5 @@
 export default {
+    maxForce: 7,
     waves: {
         waveCoefficient: 0.5,
         nextTrashDelay: 5000,
