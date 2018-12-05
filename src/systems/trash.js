@@ -11,6 +11,7 @@ AFRAME.registerSystem('trash', {
     levelTrash: 0,
     trash: [],
     delay: 0,
+    newTrashTimer: '',
 
     init() {
         this.nextTrash = this.nextTrash.bind(this);
@@ -21,11 +22,15 @@ AFRAME.registerSystem('trash', {
         this.nextTrash();
     },
 
+    stopTrashWave() {
+        clearInterval(this.newTrashTimer);
+    },
+
     nextTrash() {
         this.levelTrash++;
         if(this.levelTrash <= this.el.currentWaveConfig.trash.count) {
             this.createTrash(this.getRandomTrash());
-            setTimeout(this.nextTrash, this.delay);
+            this.newTrashTimer = setTimeout(this.nextTrash, this.delay);
             this.delay = config.waves.nextTrashDelay + generateRandomInt(-500, 500);
         }else {
             this.levelTrash = 0;
@@ -55,6 +60,16 @@ AFRAME.registerSystem('trash', {
         this.trash.push(trash);
     },
 
+    // TODO wrong palace for this method
+    updateHitPoints() {
+        const scene = document.querySelector('a-scene');
+        scene.emit(`decreaseHitPoints`, {points: 1});
+        // stop game if the user have't hit points
+        if (scene.systems.state.state.hitPoints < 1) {
+            scene.emit(`fail-game`);
+        }
+    },
+
     removeTrash(trash) {
         const foundTrashIndex = this.trash.findIndex((t) => t.el === trash);
         const foundTrash = this.trash[foundTrashIndex];
@@ -64,5 +79,15 @@ AFRAME.registerSystem('trash', {
         this.el.object3D.remove(foundTrash.el.object3D);
         setTimeout(()=> {this.el.removeChild(foundTrash.el);});
         this.trash.splice(foundTrashIndex, 1);
+    },
+
+    removeAllTrash() {
+        this.trash.forEach( (t) => { this.removeTrash(t.el) });
+    },
+
+    // helpers
+    trashIsExist(trash) {
+        return this.trash.findIndex((t) => t.el === trash) != -1;
     }
+
 });

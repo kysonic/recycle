@@ -4,6 +4,10 @@ export const GAME_STATES = {
     finished: 'finished'
 };
 
+export const GAME_SETTING = {
+    hitPoints: 3
+};
+
 export const TRASH_TYPES = [
     {type: 'glass', color: '#4182DD'},
     {type: 'plastic', color: '#81868A'},

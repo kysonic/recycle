@@ -1,6 +1,6 @@
 import AFRAME from 'aframe';
 
-AFRAME.registerTemplate('button', ({text='BUTTON', position='0 1 -2', event}) => `
+AFRAME.registerTemplate('button', ({text='BUTTON', position='0 1 -2', event, width = '1'}) => `
     <a-text position="${position}"
             align="center"
             value="${text}" 
@@ -20,7 +20,7 @@ AFRAME.registerTemplate('button', ({text='BUTTON', position='0 1 -2', event}) =>
             event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
             material="color: red; roughness: 0.5; metalness: 0.5"
             position="0 0 -0.1" 
-            width="1" 
+            width="${width}" 
             height="0.5" 
             depth="0.1" 
             >

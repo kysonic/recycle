@@ -21,7 +21,11 @@ AFRAME.registerComponent('trash', {
     setTimeout() {
         setTimeout(() => {
             if (this && this.el) {
+                if ( !this.system.trashIsExist(this.el) ) {
+                    return false
+                }
                 this.system.removeTrash(this.el);
+                this.system.updateHitPoints(this.el);
             }
         }, this.data.timeout);
     }
