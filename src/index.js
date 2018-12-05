@@ -18,7 +18,6 @@ import './components/controls-checker';
 import './components/restrict-position';
 import './components/game-manager';
 import './components/throw-controls';
-import './components/force-range';
 //Templates
 import './templates/controls'
 import './templates/trash-bin'
