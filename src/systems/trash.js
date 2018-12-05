@@ -6,6 +6,10 @@ const generateRandomInt = function (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+const generateRandomFloat = function (min, max) {
+    return (Math.random() * (max - min + 1) + min).toFixed(2);
+}
+
 AFRAME.registerSystem('trash', {
 
     levelTrash: 0,
@@ -49,7 +53,7 @@ AFRAME.registerSystem('trash', {
     },
 
     generateRandomPosition(maxPosition) {
-        return `${generateRandomInt(-maxPosition.x, maxPosition.x)} ${generateRandomInt(1, maxPosition.y)} ${generateRandomInt(-1, maxPosition.z)}`
+        return `${generateRandomFloat(-maxPosition.x, maxPosition.x)} ${generateRandomFloat(1, maxPosition.y)} ${generateRandomFloat(-0.5, maxPosition.z)}`
     },
 
     createTrash(trashData) {
