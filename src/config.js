@@ -4,9 +4,9 @@ export default {
         waveCoefficient: 0.5,
         nextTrashDelay: 5000,
         bins: {
-            startFrom: -2,
+            startFrom: -2.5,
             gap: 1,
-            step: 0.3
+            step: 0.5
         },
         trash: {
             startCount: 10
