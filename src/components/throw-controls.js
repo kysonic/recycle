@@ -7,6 +7,7 @@ AFRAME.registerComponent('throw-controls', {
     startPosition: null,
     startForceAccumulationTime: 0,
     keyIsDown: false,
+    pointerStartPosition: null,
 
     init() {
         this.pointer = this.el;
@@ -18,14 +19,22 @@ AFRAME.registerComponent('throw-controls', {
         this.grabStart = this.grabStart.bind(this);
         this.grabEnd = this.grabEnd.bind(this);
         this.applyImpulse = this.applyImpulse.bind(this);
+        this.trackPadDownHandler = this.trackPadDownHandler.bind(this);
+        this.trackPadUpHandler = this.trackPadUpHandler.bind(this);
+        this.bodyLoadedHandler = this.bodyLoadedHandler.bind(this);
 
         this.el.sceneEl.addEventListener('grab-start', this.grabStart);
         this.el.sceneEl.addEventListener('grab-end', this.grabEnd);
-        this.pointer.addEventListener('trackpaddown', this.applyImpulse);
+
+        this.pointer.addEventListener('trackpaddown', this.trackPadDownHandler);
+        this.pointer.addEventListener('trackpadup', this.trackPadUpHandler);
 
         document.body.addEventListener('keydown', this.keyDownHandler);
         document.body.addEventListener('keyup', this.keyUpHandler);
+
+        this.pointer.addEventListener('body-loaded', this.bodyLoadedHandler)
     },
+
 
     grabStart(e){
         this.grabbed = e.detail.target;
@@ -35,12 +44,27 @@ AFRAME.registerComponent('throw-controls', {
         this.grabbed = null;
     },
 
+    bodyLoadedHandler(e) {
+        this.pointerStartPosition = Object.assign({}, this.pointer.object3D.position);
+    },
+
     getZeroPosition() {
-        return this.camera.object3D.position;
+        if(this.pointer.id === 'cursor') {
+            return this.camera.object3D.position;
+        }
+        return this.pointer.object3D.position;
     },
 
     keyDownHandler(e) {
         if(e.keyCode === 32 && !this.keyIsDown) {
+            this.startForceAccumulationTime = Date.now();
+            this.keyIsDown = true;
+            this.forceRange.emit('force-range-start');
+        }
+    },
+
+    trackPadDownHandler(e) {
+        if(!this.keyIsDown) {
             this.startForceAccumulationTime = Date.now();
             this.keyIsDown = true;
             this.forceRange.emit('force-range-start');
@@ -62,22 +86,38 @@ AFRAME.registerComponent('throw-controls', {
         }
     },
 
+    trackPadUpHandler(e) {
+        this.force = 0;
+        this.force = ((Date.now() - this.startForceAccumulationTime) / 1000) * 2 + 2;
+        if(this.force > config.maxForce) {
+            this.force = config.maxForce;
+        }
+        this.applyImpulse();
+        this.keyIsDown = false;
+        this.forceRange.emit('force-range-stop');
+        this.forceRange.object3D.scale.set(0,1,0);
+    },
+
     forceGrabEnd(e) {
         this.pointer.components['super-hands'].onGrabEndButton(e);
     },
 
     applyImpulse() {
-        if(!this.grabbed) {
+        if(!this.grabbed || !this.grabbed.body) {
             return false;
         }
 
         const zeroPosition = this.getZeroPosition();
-        const pointerPosition = this.pointer.body.position;
+        const trashPosition = this.grabbed.object3D.position;
 
-        const x = (pointerPosition.x - zeroPosition.x) * this.force;
+        const directionX = (trashPosition.x - zeroPosition.x);
+        const directionZ = (trashPosition.z - zeroPosition.z);
+        const vectorsLength = Math.sqrt(Math.pow(directionX, 2) + Math.pow(directionZ, 2));
+
+        const x = (directionX / vectorsLength) * this.force;
         const y = this.force;
-        const z = (pointerPosition.z - zeroPosition.z) * this.force;
+        const z = (directionZ / vectorsLength) * this.force;
 
-        this.grabbed.body.velocity.set(x , y,  z )
+        this.grabbed.body.velocity.set(x , y,  z );
     }
 });
