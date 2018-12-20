@@ -10,6 +10,7 @@
         <a-assets>
             <a-asset-item id="glass" src="/assets/models/glass_bottle.gltf"></a-asset-item>
             <a-asset-item id="metal" src="/assets/models/can.gltf"></a-asset-item>
+            <a-asset-item id="plastic" src="/assets/models/plastic_canister.gltf"></a-asset-item>
         </a-assets>
         <!-- Templates -->
         <a-template name="controls"></a-template>
@@ -25,8 +26,10 @@
         <a-entity light="type: point; castShadow: false; intensity: 0.4;" position="0 4 5"></a-entity>
         <!-- End Lights -->
 
-        <a-template name="trash" options="type: glass; color: #aabbcc; position: 0 1 -2; id: 1"></a-template>
+        <!--<a-template name="trash" options="type: glass; color: #aabbcc; position: 0 1 -2; id: 1"></a-template>
         <a-template name="trash" options="type: metal; color: #aabbcc; position: -1 1 -2; id: 2"></a-template>
+        <a-template name="trash" options="type: plastic; color: #aabbcc; position: 1 1 -2; id: 2"></a-template>-->
+
         <a-box id="floor" static-body width=100 height=0.1 depth=100 visible="true" material="color:#ccc" shadow="receive: true; cast: false;"></a-box>
         <a-sky color="#87cefa"></a-sky>
     </a-scene>

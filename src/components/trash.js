@@ -15,7 +15,7 @@ AFRAME.registerComponent('trash', {
     init() {
         this.el.isTrash = true;
         this.system.registerTrash(this);
-        //this.setTimeout();
+        this.setTimeout();
     },
 
     setTimeout() {

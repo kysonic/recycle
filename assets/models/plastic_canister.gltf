@@ -1,0 +1,219 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 882,
+            "max" : [
+                565
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 566,
+            "max" : [
+                1.0,
+                2.2796363830566406,
+                1.0
+            ],
+            "min" : [
+                -1.0,
+                -1.422836422920227,
+                -1.0
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 566,
+            "max" : [
+                0.9238796234130859,
+                0.5928745269775391,
+                0.9238796234130859
+            ],
+            "min" : [
+                -0.9238796234130859,
+                -1.0,
+                -0.9238795638084412
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 210,
+            "max" : [
+                129
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 130,
+            "max" : [
+                0.5261629819869995,
+                2.669090986251831,
+                0.5261630415916443
+            ],
+            "min" : [
+                -0.5261631011962891,
+                2.2796363830566406,
+                -0.5261630415916443
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 130,
+            "max" : [
+                0.9238796234130859,
+                1.0,
+                0.9238795638084412
+            ],
+            "min" : [
+                -0.9238795638084412,
+                -0.6317254304885864,
+                -0.9238796234130859
+            ],
+            "type" : "VEC3"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 1764,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6792,
+            "byteOffset" : 1764,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6792,
+            "byteOffset" : 8556,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 420,
+            "byteOffset" : 15348,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1560,
+            "byteOffset" : 15768,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1560,
+            "byteOffset" : 17328,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 18888,
+            "uri" : "plastic_canister.bin"
+        }
+    ],
+    "materials" : [
+        {
+            "emissiveFactor" : [
+                0.0009400625786884914,
+                0.03555633140643266,
+                0.18400000786781234
+            ],
+            "name" : "Cap",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.0039509879637920076,
+                    0.1494396656224808,
+                    0.7733334279060387,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        },
+        {
+            "emissiveFactor" : [
+                0.07999999642372124,
+                0.07999999642372124,
+                0.07999999642372124
+            ],
+            "name" : "White plastic",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1
+                    },
+                    "indices" : 0,
+                    "material" : 1
+                },
+                {
+                    "attributes" : {
+                        "NORMAL" : 5,
+                        "POSITION" : 4
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cylinder",
+            "scale" : [
+                0.06684696674346924,
+                0.06684696674346924,
+                0.06684696674346924
+            ]
+        }
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ]
+}
