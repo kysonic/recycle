@@ -7,8 +7,7 @@ AFRAME.registerTemplate('trash', ({id, type, position, color}) => `
     <a-entity id="trash-${id}"
               class="dnd"  
               trash="type: ${type}"
-              geometry="primitive: box; width: 0.2; height: 0.2; depth: 0.2;"
-              material="color: ${color}"
+              gltf-model="#${type}"
               position="${position}"
               hoverable grabbable
               dynamic-body
