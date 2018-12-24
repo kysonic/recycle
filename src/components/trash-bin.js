@@ -1,4 +1,5 @@
 import AFRAME from 'aframe';
+import {TRASH_TYPES} from '../consts';
 
 AFRAME.registerComponent('trash-bin', {
     schema: {
@@ -9,5 +10,15 @@ AFRAME.registerComponent('trash-bin', {
     },
     init() {
         this.system.registerBin(this);
+        this.changeColor = this.changeColor.bind(this);
+        this.model = this.el.querySelector('.model');
+        this.model.addEventListener('model-loaded', this.changeColor);
+    },
+    changeColor(e) {
+        e.detail.model.traverse((node) => {
+            if (node.isMesh) {
+                node.material.color = new THREE.Color(TRASH_TYPES.find(t => t.type === this.data.type).color);
+            }
+        });
     }
 });

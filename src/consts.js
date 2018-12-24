@@ -5,9 +5,9 @@ export const GAME_STATES = {
 };
 
 export const TRASH_TYPES = [
-    {type: 'glass', color: '#4182DD'},
-    {type: 'plastic', color: '#81868A'},
-    {type: 'metal', color: '#B83916'},
-    {type: 'organic', color: '#72b810'},
-    {type: 'paper', color: '#cc609d'}
+    {type: 'glass', color: '#61a17d'},
+    {type: 'plastic', color: '#4182DD'},
+    {type: 'metal', color: '#cb5d47'},
+    {type: 'organic', color: '#9d9eb8'},
+    {type: 'paper', color: '#c5cc1f'}
 ];

@@ -24,7 +24,7 @@ const generateBins = function (waveNumber) {
         if(trashBinsCount % 2 === 0) {
             x += binsConfig.gap / 2;
         }
-        trashBin.position = `${x} 0 ${z}`;
+        trashBin.position = `${x} 0.4 ${z}`;
         return trashBin;
     });
 };

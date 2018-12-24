@@ -6,23 +6,80 @@ import '../components/trash-bin';
 import '../components/trash-bin-collider';
 
 
-AFRAME.registerTemplate('trash-bin', ({type, position, color}) => `
-    <a-entity id="trash-bin-${type}" position="${position}" trash-bin="type: ${type}" >
-        <a-box class="left" static-body shadow="receive: false" position="-0.25 0 0" width="0.01" height="1" depth="0.5" material="color: ${color}"></a-box>
-        <a-box class="right" static-body  shadow="receive: false" position="0.25 0 0" width="0.01" height="1" depth="0.5" material="color: ${color}"></a-box>
-        <a-box class="forward" static-body shadow="receive: false"  position="0 0 -0.25" width="0.5" height="1" depth="0.01" material="color: ${color}"></a-box>
-        <a-box class="back" static-body shadow="receive: false"  position="0 0 0.25" width="0.5" height="1" depth="0.01" material="color: ${color}"></a-box>
+AFRAME.registerTemplate('trash-bin', ({type, position}) => `
+    <a-entity id="trash-bin-${type}" position="${position}" trash-bin="type: ${type}" scale="1.5 1.5 1.5">
+        <a-box class="left" static-body 
+        position="-0.12 0.03 0" 
+        width="0.01" 
+        height="0.45" 
+        depth="0.25"
+        rotation="0 3 4"
+         material="transparent: true; opacity: 0"
+        ></a-box>
+        <a-box class="right" static-body 
+        position="0.13 0.03 0" 
+        width="0.01" 
+        height="0.45" 
+        depth="0.25"
+        rotation="0 3 -4"
+        material="transparent: true; opacity: 0"
+        ></a-box>
+        <a-box class="forward" static-body 
+        position="0 0.03 0.13" 
+        width="0.25" 
+        height="0.45" 
+        depth="0.01"
+        rotation="4 0 0"
+         material="transparent: true; opacity: 0"
+        ></a-box>
+        <a-box class="forward" static-body 
+        position="0 0.03 0.13" 
+        width="0.25" 
+        height="0.45" 
+        depth="0.01"
+        rotation="4 0 0"
+        material="transparent: true; opacity: 0"
+        ></a-box>
+        <a-box class="back" static-body 
+        position="0 0.03 -0.13" 
+        width="0.25" 
+        height="0.45" 
+        depth="0.01"
+        rotation="-4 0 0"
+        material="transparent: true; opacity: 0"
+        ></a-box>
         <a-box class="collider" 
                trash-bin-collider
                static-body 
                collision-filter="collisionForces: false"
                position="0 0 0" 
-               width="0.4"
-               height="0.4"
-               depth="0.5"
+               width="0.1"
+               height="0.1"
+               depth="0.1"
                color="red"
                trasnparent="true"
                opacity="0">
         </a-box>
+        <a-entity
+                class="model"
+                gltf-model="#trash-bin"
+                material="color: red"
+         >
+            <a-entity position="0 0.15 0.15"
+                      text="
+                      align: center;
+                      width: 1;
+                      color: black;
+                      value:${type.toUpperCase()};
+                      font: https://cdn.aframe.io/fonts/Roboto-msdf.json"
+            ></a-entity>
+            <a-plane position="0 0 0.14"
+                     width="0.15"
+                     height="0.15"
+                     depth="0.15"
+                     color="#FFFFFF"
+                     src="#sign"
+                     material="repeat:1 1; transparent:true"></a-plane>
+         </a-entity>
     </a-entity>    
 `);

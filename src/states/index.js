@@ -5,7 +5,7 @@ AFRAME.registerState({
     initialState: {
         score: 0,
         gameState: GAME_STATES.notStarted,
-        currentWave: 6,
+        currentWave: 0,
     },
 
     handlers: {
