@@ -1,5 +1,7 @@
 import AFRAME from 'aframe';
 
+const COUNTDOWN_TEXT = ['READY', 'STEADY', 'RECYCLE!'];
+
 AFRAME.registerTemplate('controls', `
     <a-sub-assets>
         <a-mixin id="controllers-right" vive-controls="hand: right"
@@ -32,8 +34,9 @@ AFRAME.registerTemplate('controls', `
                      width="10" 
                      position="0 1.65 -2"
                      scale="0 1 0"
-                     anime="property: scale; from: 0 1 0; to: 1 1 0; dur: 2500; startEvents: force-range-start; pauseEvents: force-range-stop"
+                     anime="property: scale; from: 0 1 0; to: 1 1 0; dur: 2500; startEvents: force-range-start; pauseEvents: force-range-stop" 
             ></a-plane>
+            <a-entity id="countdown" position="0 0 -1" countdown="text: ${COUNTDOWN_TEXT}; interval: 1000"></a-entity>
         </a-camera>
     </a-entity>
 `);

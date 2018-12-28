@@ -20,7 +20,7 @@ AFRAME.registerComponent('countdown', {
         },
         textStyles: {
             type: 'string',
-            default: 'align: center; width: 3; color: red; font: https://cdn.aframe.io/fonts/Roboto-msdf.json'
+            default: 'align: center; width: 3; color: white; font: https://cdn.aframe.io/fonts/Roboto-msdf.json'
         },
         latestDelay: {
             type: 'number',

@@ -1,4 +1,5 @@
 import AFRAME from 'aframe';
+import {TRASH_TYPES} from "../consts";
 
 AFRAME.registerComponent('trash', {
     schema: {
@@ -13,9 +14,40 @@ AFRAME.registerComponent('trash', {
     },
 
     init() {
+        this.nodes = [];
         this.el.isTrash = true;
         this.system.registerTrash(this);
         this.setTimeout();
+
+        /*this.onModelLoaded = this.onModelLoaded.bind(this);
+        this.onHover = this.onHover.bind(this);
+        this.onHoverEnd = this.onHoverEnd.bind(this);
+
+        this.el.addEventListener('model-loaded', this.onModelLoaded);
+        this.el.addEventListener('hover-start', this.onHover);
+        this.el.addEventListener('hover-end', this.onHoverEnd);*/
+    },
+
+    onModelLoaded(e) {
+        e.detail.model.traverse((node) => {
+            if (node.isMesh) {
+                this.nodes.push(node);
+            }
+        });
+    },
+
+    onHover() {
+        this.nodes.forEach((node) => {
+            node.material.transparent = true;
+            node.material.opacity = 0.5;
+        });
+    },
+
+    onHoverEnd() {
+        this.nodes.forEach((node) => {
+            node.material.transparent = false;
+            node.material.opacity = 1;
+        });
     },
 
     setTimeout() {
