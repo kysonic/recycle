@@ -15,6 +15,7 @@ AFRAME.registerSystem('trash', {
     levelTrash: 0,
     trash: [],
     delay: 0,
+    timeout: null,
 
     init() {
         this.nextTrash = this.nextTrash.bind(this);
@@ -25,16 +26,25 @@ AFRAME.registerSystem('trash', {
         this.nextTrash();
     },
 
+    stopTrashWave() {
+        clearTimeout(this.timeout);
+        this.timeout = null;
+    },
+
     nextTrash() {
         this.levelTrash++;
-        if(this.levelTrash <= this.el.currentWaveConfig.trash.count) {
+        if(this.timeout) {
+            clearTimeout(this.timeout);
+            this.timeout = null;
+        }
+        if (this.levelTrash <= this.el.currentWaveConfig.trash.count) {
             this.createTrash(this.getRandomTrash());
-            setTimeout(this.nextTrash, this.delay);
+            this.timeout = setTimeout(this.nextTrash, this.delay);
             this.delay = config.waves.nextTrashDelay + generateRandomInt(-500, 500);
-        }else {
+        } else {
             this.levelTrash = 0;
             this.el.emit('drop-previous-level');
-            this.el.emit('start-next-level');
+            setTimeout(()=>this.el.emit('start-next-level'), 0);
         }
     },
 
@@ -62,11 +72,20 @@ AFRAME.registerSystem('trash', {
     removeTrash(trash) {
         const foundTrashIndex = this.trash.findIndex((t) => t.el === trash);
         const foundTrash = this.trash[foundTrashIndex];
-        if(!foundTrash) {
+        if (!foundTrash) {
             return false;
         }
         this.el.object3D.remove(foundTrash.el.object3D);
-        setTimeout(()=> {this.el.removeChild(foundTrash.el);});
+        setTimeout(() => {
+            this.el.removeChild(foundTrash.el);
+        });
         this.trash.splice(foundTrashIndex, 1);
+    },
+
+    dropTrash() {
+        this.trash.forEach((trash) => {
+            this.el.removeChild(trash.el);
+        });
+        this.trash = [];
     }
 });

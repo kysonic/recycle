@@ -32,7 +32,20 @@ AFRAME.registerComponent('throw-controls', {
         document.body.addEventListener('keydown', this.keyDownHandler);
         document.body.addEventListener('keyup', this.keyUpHandler);
 
-        this.pointer.addEventListener('body-loaded', this.bodyLoadedHandler)
+        this.pointer.addEventListener('body-loaded', this.bodyLoadedHandler);
+    },
+
+    remove() {
+        this.el.sceneEl.removeEventListener('grab-start', this.grabStart);
+        this.el.sceneEl.removeEventListener('grab-end', this.grabEnd);
+
+        this.pointer.removeEventListener('trackpaddown', this.trackPadDownHandler);
+        this.pointer.removeEventListener('trackpadup', this.trackPadUpHandler);
+
+        document.body.removeEventListener('keydown', this.keyDownHandler);
+        document.body.removeEventListener('keyup', this.keyUpHandler);
+
+        this.pointer.removeEventListener('body-loaded', this.bodyLoadedHandler);
     },
 
 

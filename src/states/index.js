@@ -17,6 +17,10 @@ AFRAME.registerState({
             state.score += action.points;
         },
 
+        setScore(state, action) {
+            state.score = action.score;
+        },
+
         setGameState(state, action) {
             state.gameState = action.gameState;
         },

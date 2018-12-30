@@ -14,6 +14,9 @@ AFRAME.registerComponent('trash-bin', {
         this.model = this.el.querySelector('.model');
         this.model.addEventListener('model-loaded', this.changeColor);
     },
+    remove() {
+        this.model.removeEventListener('model-loaded', this.changeColor);
+    },
     changeColor(e) {
         e.detail.model.traverse((node) => {
             if (node.isMesh) {

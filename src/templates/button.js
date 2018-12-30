@@ -1,7 +1,8 @@
 import AFRAME from 'aframe';
 
-AFRAME.registerTemplate('button', ({text='BUTTON', position='0 1 -2', event}) => `
+AFRAME.registerTemplate('button', ({text='BUTTON', position='0 1 -2', rotation='0 0 0', event}) => `
     <a-text position="${position}"
+            rotation="${rotation}"
             align="center"
             value="${text}" 
             color="white"

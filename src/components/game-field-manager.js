@@ -2,6 +2,7 @@ import AFRAME from 'aframe';
 import '../templates/trash';
 import '../templates/trash-bin';
 import waveGenerator from '../lib/wave-generator';
+import {GAME_STATES} from "../consts";
 
 AFRAME.registerComponent('game-field-manager', {
     init() {
@@ -17,7 +18,14 @@ AFRAME.registerComponent('game-field-manager', {
         this.el.sceneEl.addEventListener('start-next-level', this.startNextLevel);
         this.el.sceneEl.addEventListener('drop-previous-level', this.dropPreviousLevel);
         // Start level 1
+        console.log('Start init level');
         this.startNextLevel();
+    },
+
+    remove() {
+        this.el.sceneEl.removeEventListener('countdown-stopped', this.startWave);
+        this.el.sceneEl.removeEventListener('start-next-level', this.startNextLevel);
+        this.el.sceneEl.removeEventListener('drop-previous-level', this.dropPreviousLevel);
     },
 
     startNextLevel() {
@@ -34,6 +42,8 @@ AFRAME.registerComponent('game-field-manager', {
     },
 
     dropPreviousLevel() {
+        this.trashSystem.stopTrashWave();
+        this.trashSystem.dropTrash();
         this.trashBinSystem.dropBins();
     },
 
@@ -42,6 +52,9 @@ AFRAME.registerComponent('game-field-manager', {
     },
 
     startWave() {
+        if(this.el.sceneEl.systems.state.state.gameState !== GAME_STATES.inProgress) {
+            return false;
+        }
         this.trashSystem.startTrashWave();
     }
 });

@@ -43,6 +43,11 @@ AFRAME.registerComponent('countdown', {
         this.el.sceneEl.addEventListener('stop-countdown', this.stop);
     },
 
+    remove() {
+        this.el.sceneEl.removeEventListener('start-countdown', this.start);
+        this.el.sceneEl.removeEventListener('stop-countdown', this.stop);
+    },
+
     setupAnimation() {
         this.el.setAttribute('anime__scale', `${this.data.animation}dur: ${this.data.interval}; startEvents: countdown-run-phrase; pauseEvents: countdown-pause-phrase`);
     },

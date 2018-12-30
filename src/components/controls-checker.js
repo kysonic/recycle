@@ -52,6 +52,7 @@ AFRAME.registerComponent('controls-checker', {
         const cursor = document.createElement('a-cursor');
         cursor.id = 'cursor';
         cursor.setAttribute('mixin', 'point');
+        cursor.setAttribute('material', {color: '#EAEAEC', shader: 'flat'});
         camera.appendChild(cursor);
     }
 });

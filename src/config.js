@@ -2,7 +2,7 @@ export default {
     maxForce: 7,
     waves: {
         waveCoefficient: 0.5,
-        nextTrashDelay: 5000,
+        nextTrashDelay: 4000,
         bins: {
             startFrom: -2.5,
             gap: 1,
