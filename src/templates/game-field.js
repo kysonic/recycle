@@ -12,7 +12,6 @@ AFRAME.registerTemplate('game-field', `
         <a-asset-item id="organic" src="/assets/models/apple.gltf"></a-asset-item>
         <a-asset-item id="paper" src="/assets/models/carton_box.gltf"></a-asset-item>
         <a-asset-item id="trash-bin" src="/assets/models/trash_bin.gltf"></a-asset-item>
-        <img id="sign" src="/assets/models/recycle-sign.png">
     </a-sub-assets>
     
     <a-template name="button" options="text: EXIT; position: 0 1 4; rotation: 0 180 0; event: stop-game"></a-template>   
