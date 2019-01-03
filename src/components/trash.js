@@ -55,6 +55,7 @@ AFRAME.registerComponent('trash', {
             if (this && this.el && !this.el.isRemoved) {
                 this.system.removeTrash(this.el);
                 this.el.sceneEl.emit('decreaseLives', {points: 1});
+                this.el.sceneEl.emit('runIndicator', {src: '#heart_tpnt', text: '-1', textColor: '#FF7D7D', startPosition: this.el.getAttribute('position')});
             }
         }, this.data.timeout);
     }

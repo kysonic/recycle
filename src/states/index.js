@@ -4,7 +4,7 @@ import {GAME_STATES} from '../consts';
 AFRAME.registerState({
     initialState: {
         score: 0,
-        lives: 10,
+        lives: 2,
         gameState: GAME_STATES.notStarted,
         currentWave: 0,
     },
@@ -44,6 +44,10 @@ AFRAME.registerState({
 
         increaseLives(state, action) {
             state.lives += action.points;
+        },
+
+        setLives(state, action) {
+            state.lives = action.lives;
         }
     }
 });

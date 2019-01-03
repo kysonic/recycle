@@ -5,8 +5,10 @@ AFRAME.registerComponent('game-manager', {
     init() {
         this.startGame = this.startGame.bind(this);
         this.stopGame = this.stopGame.bind(this);
+        this.checkState = this.checkState.bind(this);
         this.el.addEventListener('start-game', this.startGame);
         this.el.addEventListener('stop-game', this.stopGame);
+        this.el.addEventListener('stateupdate', this.checkState);
     },
 
     remove() {
@@ -34,5 +36,16 @@ AFRAME.registerComponent('game-manager', {
         this.el.emit('drop-previous-level');
         this.el.emit('setCurrentWave', {currentWave: 0});
         this.el.emit('setScore', {score: 0});
+        this.el.emit('setLives', {lives: 10});
+    },
+
+    checkState() {
+        if (GAME_STATES.inProgress === this.el.systems.state.state.gameState) {
+            if(this.el.systems.state.state.lives < 1) {
+                setTimeout(()=> {
+                    this.stopGame();
+                }, 1000)
+            }
+        }
     }
 });

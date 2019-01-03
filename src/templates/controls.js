@@ -24,7 +24,7 @@ AFRAME.registerTemplate('controls', `
                                   colliderEndEventProperty: clearedEls;
                                   grabStartButtons: triggerdown,mousedown;
                                   grabEndButtons: triggerup,mouseup,trackpadup"
-                                  ></a-mixin>
+                                  ></a-mixin>                    
     </a-sub-assets>
     <a-entity id="controls" controls-checker>
         <a-camera id="camera" positon="0 1.6 0" look-controls="pointerLockEnabled: true" restrict-position>
@@ -32,10 +32,11 @@ AFRAME.registerTemplate('controls', `
                      color="red" 
                      height="0.1" 
                      width="10" 
-                     position="0 1.65 -2"
+                     position="0 1.55 -2"
                      scale="0 1 0"
                      anime="property: scale; from: 0 1 0; to: 1 1 0; dur: 2500; startEvents: force-range-start; pauseEvents: force-range-stop" 
             ></a-plane>
+            
             <a-entity id="countdown" position="0 0 -1" countdown="text: ${COUNTDOWN_TEXT}; interval: 1000"></a-entity>
         </a-camera>
     </a-entity>

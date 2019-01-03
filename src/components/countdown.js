@@ -56,15 +56,6 @@ AFRAME.registerComponent('countdown', {
         this.el.setAttribute('text', this.data.textStyles);
     },
 
-    remove() {
-        this.unbindListeners();
-    },
-
-    unbindListeners() {
-        this.el.sceneEl.removeEventListener('start-countdown', this.start);
-        this.el.sceneEl.removeEventListener('stop-countdown', this.stop);
-    },
-
     start() {
         this.el.emit('countdown-started');
         this.interval = setInterval(this.runPhrase, this.data.interval);

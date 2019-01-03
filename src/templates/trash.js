@@ -10,5 +10,6 @@ AFRAME.registerTemplate('trash', ({id, type, position, color}) => `
               gltf-model="#${type}"
               position="${position}"
               hoverable grabbable
-              dynamic-body></a-entity>   
+              dynamic-body>
+    </a-entity> 
 `);
