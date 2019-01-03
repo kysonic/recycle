@@ -21,6 +21,7 @@ import './components/game-manager';
 import './components/throw-controls';
 //Templates
 import './templates/controls'
+import './templates/banner'
 import './templates/trash-bin'
 import './templates/start-screen'
 import './templates/game-field'

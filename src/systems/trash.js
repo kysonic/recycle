@@ -29,6 +29,7 @@ AFRAME.registerSystem('trash', {
     stopTrashWave() {
         clearTimeout(this.timeout);
         this.timeout = null;
+        this.levelTrash = 0;
     },
 
     nextTrash() {

@@ -6,16 +6,9 @@
     <script src="build.js"></script>
 </head>
 <body>
-    <a-scene game-manager physics="debug: false" shadow="type: pcf" touch-to-click-converter>
+    <a-scene game-manager physics="debug: false" shadow="type: pcf" hud touch-to-click-converter>
         <a-assets>
-            <a-asset-item id="glass" src="/assets/models/glass_bottle.gltf"></a-asset-item>
-            <a-asset-item id="metal" src="/assets/models/can.gltf"></a-asset-item>
-            <a-asset-item id="plastic" src="/assets/models/plastic_canister.gltf"></a-asset-item>
-            <a-asset-item id="organic" src="/assets/models/apple.gltf"></a-asset-item>
-            <a-asset-item id="paper" src="/assets/models/carton_box.gltf"></a-asset-item>
-            <a-asset-item id="trash-bin" src="/assets/models/trash_bin.gltf"></a-asset-item>
             <a-asset-item id="scene" src="/assets/models/scene.gltf"></a-asset-item>
-            <img id="sign" src="/assets/models/recycle-sign.png">
             <img id="clouds" src="/assets/img/clouds.png">
         </a-assets>
         <!-- Templates -->
@@ -36,11 +29,12 @@
                 gltf-model="#scene"
                 shadow
         ></a-entity>
+        <a-template name="banner"></a-template>
         <a-box id="floor" static-body
-               width=100
-               height=0.3
-               depth=100
-               position="0 -0.05 0"
+               width="100"
+               height="1"
+               depth="100"
+               position="0 -0.42 0"
                visible="false" material="color:#ccc" shadow="receive: true; cast: false;"></a-box>
         <a-sky color="#ABFFFF" src="#clouds"></a-sky>
     </a-scene>

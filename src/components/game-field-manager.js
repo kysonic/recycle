@@ -18,7 +18,6 @@ AFRAME.registerComponent('game-field-manager', {
         this.el.sceneEl.addEventListener('start-next-level', this.startNextLevel);
         this.el.sceneEl.addEventListener('drop-previous-level', this.dropPreviousLevel);
         // Start level 1
-        console.log('Start init level');
         this.startNextLevel();
     },
 
@@ -33,7 +32,9 @@ AFRAME.registerComponent('game-field-manager', {
         this.el.sceneEl.emit('increaseCurrentWave');
         // Countdown
         if(this.el.sceneEl.systems.state.state.currentWave > 1) {
-            this.countdown.setAttribute('countdown', {text: [`Level ${this.el.sceneEl.systems.state.state.currentWave}`, 'READY', 'STEADY', 'GO!']});
+            this.countdown.setAttribute('countdown', {text: [`Level ${this.el.sceneEl.systems.state.state.currentWave}`, 'READY', 'RECYCLE!']});
+        } else {
+            this.countdown.setAttribute('countdown', {text: ['READY', 'STADY', 'RECYCLE!']});
         }
         this.el.emit('start-countdown');
         // Wave
