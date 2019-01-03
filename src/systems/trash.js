@@ -45,6 +45,7 @@ AFRAME.registerSystem('trash', {
         } else {
             this.levelTrash = 0;
             this.el.emit('drop-previous-level');
+            this.el.emit('increaseLives', {points: 5});
             setTimeout(()=>this.el.emit('start-next-level'), 0);
         }
     },
@@ -71,11 +72,13 @@ AFRAME.registerSystem('trash', {
     },
 
     removeTrash(trash) {
+        trash.isRemoved = true;
         const foundTrashIndex = this.trash.findIndex((t) => t.el === trash);
         const foundTrash = this.trash[foundTrashIndex];
         if (!foundTrash) {
             return false;
         }
+        clearTimeout(foundTrash.timeout);
         this.el.object3D.remove(foundTrash.el.object3D);
         setTimeout(() => {
             this.el.removeChild(foundTrash.el);

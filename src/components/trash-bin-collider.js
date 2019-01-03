@@ -13,8 +13,13 @@ AFRAME.registerComponent('trash-bin-collider', {
             const trashType = trash.getAttribute('trash').type;
             if (trash.isTrash && !trash.isCollided) {
                 trash.isCollided = true;
-                scene.systems['trash'].removeTrash(trash);
-                scene.emit(`${binType == trashType ? 'increase' : 'decrease'}Score`, {points: 10});
+                scene.systems.trash.removeTrash(trash);
+                if (binType == trashType) {
+                    scene.emit('increaseScore', {points: 10});
+                } else {
+                    scene.emit('decreaseLives', {points: 1});
+                }
+
             }
         });
     }

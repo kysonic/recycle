@@ -51,9 +51,10 @@ AFRAME.registerComponent('trash', {
     },
 
     setTimeout() {
-        setTimeout(() => {
-            if (this && this.el) {
+        this.timeout = setTimeout(() => {
+            if (this && this.el && !this.el.isRemoved) {
                 this.system.removeTrash(this.el);
+                this.el.sceneEl.emit('decreaseLives', {points: 1});
             }
         }, this.data.timeout);
     }

@@ -36,6 +36,14 @@ AFRAME.registerState({
 
         setCurrentWave(state, action) {
             state.currentWave = action.currentWave;
+        },
+
+        decreaseLives(state, action) {
+            state.lives -= action.points;
+        },
+
+        increaseLives(state, action) {
+            state.lives += action.points;
         }
     }
 });
