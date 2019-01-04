@@ -20,7 +20,7 @@ recycle the trash otherwise, your lives will be reduced as well. In case if you 
 
 - Cardboards. You can grab the trash but you cannot throw it because usually cardboards support only one button... So you can just nod your head but it's not so comfortable.
 
-###[Play the game online](https://recyclevr.neocities.org/)
+### [Play the game online](https://recyclevr.neocities.org/)
 
 ## DEVELOPMENT 
 
