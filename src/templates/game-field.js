@@ -14,13 +14,13 @@ AFRAME.registerTemplate('game-field', `
         <a-asset-item id="paper" src="/assets/models/carton_box.gltf"></a-asset-item>
         <a-asset-item id="trash-bin" src="/assets/models/trash_bin.gltf"></a-asset-item>
         
-        <audio id="glassHit" src="/assets/sounds/glass-hit.wav" preload></audio>
-        <audio id="plasticHit" src="/assets/sounds/plastic-hit.wav" preload></audio>
-        <audio id="metalHit" src="/assets/sounds/metal-hit.wav" preload></audio>
-        <audio id="organicHit" src="/assets/sounds/plastic-hit.wav" preload></audio>
-        <audio id="paperHit" src="/assets/sounds/plastic-hit.wav" preload></audio>
-        <audio id="levelUp" src="/assets/sounds/level-up.wav" preload></audio>
-        <audio id="fail" src="/assets/sounds/fail.wav" preload></audio>
+        <audio id="glassHit" src="https://res.cloudinary.com/recyclevr/video/upload/v1/sounds/glass-hit.wav" preload></audio>
+        <audio id="plasticHit" src="https://res.cloudinary.com/recyclevr/video/upload/v1/sounds/plastic-hit.wav" preload></audio>
+        <audio id="metalHit" src="https://res.cloudinary.com/recyclevr/video/upload/v1/sounds/metal-hit.wav" preload></audio>
+        <audio id="organicHit" src="https://res.cloudinary.com/recyclevr/video/upload/v1/sounds/plastic-hit.wav" preload></audio>
+        <audio id="paperHit" src="https://res.cloudinary.com/recyclevr/video/upload/v1/sounds/plastic-hit.wav" preload></audio>
+        <audio id="levelUp" src="https://res.cloudinary.com/recyclevr/video/upload/v1/sounds/level-up.wav" preload></audio>
+        <audio id="fail" src="https://res.cloudinary.com/recyclevr/video/upload/v1/sounds/fail.wav" preload></audio>
     </a-sub-assets>
     <a-template name="button" options="text: EXIT; position: 0 1 4; rotation: 0 180 0; event: stop-game"></a-template>
     <a-sound id="gameFieldSound" src="#levelUp" volume="0.05"></a-sound>

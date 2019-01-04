@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Recycle!</title>
-    <script src="build.js"></script>
+    <script src="/dist/build.js"></script>
     <style>
         #loading {
             position: fixed;
@@ -43,8 +43,8 @@
         <img id="clouds" src="/assets/img/clouds.png">
         <a-asset-item id="Roboto"
                       src="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/fonts/helvetiker_bold.typeface.json"></a-asset-item>
-        <audio id="backgroundSound" src="/assets/sounds/suburb.mp3" preload></audio>
-        <audio id="click" src="/assets/sounds/click.mp3" preload></audio>
+        <audio id="backgroundSound" src="https://res.cloudinary.com/recyclevr/video/upload/v1546617896/sounds/suburb.wav" preload></audio>
+        <audio id="click" src="https://raw.githubusercontent.com/kysonic/recycle/master/assets/sounds/click.mp3" preload></audio>
     </a-assets>
     <!-- Sounds -->
     <a-sound src="#backgroundSound" autoplay="true" position="0 4 0" volume="0.05" loop="true"></a-sound>
