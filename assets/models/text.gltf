@@ -1,0 +1,314 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 11838,
+            "max" : [
+                6541
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 6542,
+            "max" : [
+                1.680813193321228,
+                0.032999999821186066,
+                0.2945435643196106
+            ],
+            "min" : [
+                -1.630138874053955,
+                -0.032999999821186066,
+                -0.32988274097442627
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 6542,
+            "max" : [
+                0.9186986684799194,
+                1.0,
+                0.7069917917251587
+            ],
+            "min" : [
+                -0.7070528268814087,
+                -1.0,
+                -0.9426862597465515
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 6542,
+            "max" : [
+                1.0,
+                0.720816969871521,
+                0.7246642112731934,
+                1.0
+            ],
+            "min" : [
+                0.2711748778820038,
+                -0.7749564051628113,
+                -0.18819032609462738,
+                -1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 6542,
+            "max" : [
+                0.8075147271156311,
+                0.5560633540153503
+            ],
+            "min" : [
+                0.31525400280952454,
+                0.4631614089012146
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 23676,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 78504,
+            "byteOffset" : 23676,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 78504,
+            "byteOffset" : 102180,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 104672,
+            "byteOffset" : 180684,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 52336,
+            "byteOffset" : 285356,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 337692,
+            "uri" : "text.bin"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "Bio",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.640000066757203,
+                    0.027698728854935295,
+                    0.07230869639379822,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        },
+        {
+            "alphaMode" : "BLEND",
+            "name" : "Glass",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.048080617905864376,
+                    0.640000066757203,
+                    0.15647324556817477,
+                    0.84375
+                ],
+                "metallicFactor" : 0.0
+            }
+        },
+        {
+            "name" : "Menrals",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.7999926686285832,
+                    0.3112221287373025,
+                    0.05169932919292641,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        },
+        {
+            "name" : "Metal",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.5784662943704255,
+                    0.6733384248674064,
+                    0.737500011920929,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        },
+        {
+            "emissiveFactor" : [
+                0.10687434786250893,
+                0.12799997282027853,
+                0.022704210582965567
+            ],
+            "name" : "Organic",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.6679648756980896,
+                    0.8000000715255737,
+                    0.14190135896205902,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        },
+        {
+            "emissiveFactor" : [
+                0.07999999076128006,
+                0.0614341331107231,
+                0.07476394743590564
+            ],
+            "name" : "Paper",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.618154764175415,
+                    0.4746975806372262,
+                    0.5776961954154842,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        },
+        {
+            "name" : "Plastic",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.558448332490876,
+                    0.7121712560953171,
+                    0.8306843464342961,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        },
+        {
+            "name" : "Red",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    1.0,
+                    0.008666109293699265,
+                    0.020680321380496025,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "CURECYCLE!",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 6
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "Camera",
+            "rotation" : [
+                0.6576493382453918,
+                -0.04363711550831795,
+                0.038210947066545486,
+                0.7510879635810852
+            ],
+            "translation" : [
+                -3.018620729446411,
+                2.701735496520996,
+                7.033452033996582
+            ]
+        },
+        {
+            "name" : "Lamp",
+            "rotation" : [
+                0.16907575726509094,
+                0.7558802962303162,
+                -0.27217137813568115,
+                0.570947527885437
+            ],
+            "scale" : [
+                1.0,
+                1.0,
+                0.9999999403953552
+            ],
+            "translation" : [
+                -2.9657392501831055,
+                5.903861999511719,
+                5.952668190002441
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "Text",
+            "rotation" : [
+                -0.0,
+                0.7222293615341187,
+                0.6916536688804626,
+                0.0
+            ],
+            "scale" : [
+                -1.179896593093872,
+                -2.039835214614868,
+                -1.1869527101516724
+            ],
+            "translation" : [
+                -2.1932268142700195,
+                1.6681773662567139,
+                -0.0
+            ]
+        }
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                2,
+                1,
+                0
+            ]
+        }
+    ]
+}

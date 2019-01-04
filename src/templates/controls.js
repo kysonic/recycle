@@ -14,7 +14,7 @@ AFRAME.registerTemplate('controls', `
                      oculus-touch-controls="hand: left"
                      windows-motion-controls="hand: left">
             </a-mixin>
-            <a-mixin id="point" raycaster="showLine: true; far: 10; objects: .dnd"
+            <a-mixin id="point" raycaster="showLine: true; far: 5; objects: .dnd"
                      collision-filter="collisionForces: false"
                      static-body="shape: sphere; sphereRadius: 0.01"
                      throw-controls

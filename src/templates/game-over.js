@@ -2,27 +2,23 @@ import AFRAME from 'aframe';
 import './button';
 
 AFRAME.registerTemplate('game-over', `
+    <a-sub-assets>
+        <a-asset-item id="Roboto" src="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/fonts/helvetiker_bold.typeface.json"></a-asset-item>
+    </a-sub-assets>
     <a-entity 
         position="-2.2 2 -4" 
-        material="color: white;" 
+        material="color: #90dfdf;" 
         text-geometry="value: GAME OVER; font: #Roboto; align: center"></a-entity>
     <a-entity 
         position="-1.9 1.5 -4" 
-        material="color: white;" 
+        material="color: #90dfdf;" 
         text-geometry="value: YOUR SCORE:; font: #Roboto; align: center; size: 0.3"></a-entity> 
     <a-entity 
         position="1 1.51 -4" 
-        material="color: white;" 
+        material="color: #90dfdf;" 
         bind="text-geometry.value: score"
         text-geometry="value: 0; font: #Roboto; align: center; size: 0.3"></a-entity>   
-    <a-plane
-        position="-0.16 2.05 -4.5"
-        width="4.75"
-        height="1.25"
-        depth="0.1"
-        material="color: white; transparent: true; opacity: 0.2"
-    >
     
     </a-plane>    
-    <a-template name="button" options="text: RESTART; position: 0 0.8 -4; event: start-game; color: #FC342B"></a-template>
+    <a-template name="button" options="text: RESTART; position: 0 0.8 -4; event: start-game; color: #5e9696; width: 1.3"></a-template>
 `);
