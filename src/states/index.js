@@ -3,8 +3,8 @@ import {GAME_STATES} from '../consts';
 
 AFRAME.registerState({
     initialState: {
-        score: 120,
-        lives: 1,
+        score: 0,
+        lives: 10,
         gameState: GAME_STATES.notStarted,
         currentWave: 0,
     },

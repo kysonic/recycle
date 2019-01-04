@@ -23,6 +23,7 @@ import './components/throw-controls';
 import './templates/start-screen'
 import './templates/game-field'
 import './templates/game-over'
+import './templates/how-to-play'
 
 import './templates/controls'
 import './templates/banner'

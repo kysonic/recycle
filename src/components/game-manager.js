@@ -6,10 +6,14 @@ AFRAME.registerComponent('game-manager', {
         this.startGame = this.startGame.bind(this);
         this.stopGame = this.stopGame.bind(this);
         this.gameOver = this.gameOver.bind(this);
+        this.howToPlay = this.howToPlay.bind(this);
+        this.back = this.back.bind(this);
         this.checkState = this.checkState.bind(this);
 
         this.el.addEventListener('start-game', this.startGame);
         this.el.addEventListener('stop-game', this.stopGame);
+        this.el.addEventListener('back', this.back);
+        this.el.addEventListener('how-to-play', this.howToPlay);
         this.el.addEventListener('stateupdate', this.checkState);
     },
 
@@ -25,6 +29,14 @@ AFRAME.registerComponent('game-manager', {
             this.el.emit('setGameState', {gameState: GAME_STATES.inProgress});
             this.el.systems.router.changeRoute('game-field');
         }
+    },
+
+    howToPlay() {
+        this.el.systems.router.changeRoute('how-to-play');
+    },
+
+    back() {
+        this.el.systems.router.changeRoute('start-screen');
     },
 
     stopGame() {
