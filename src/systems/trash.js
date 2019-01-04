@@ -88,6 +88,7 @@ AFRAME.registerSystem('trash', {
 
     dropTrash() {
         this.trash.forEach((trash) => {
+            this.el.isRemoved = true;
             this.el.removeChild(trash.el);
         });
         this.trash = [];

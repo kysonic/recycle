@@ -20,9 +20,11 @@ import './components/restrict-position';
 import './components/game-manager';
 import './components/throw-controls';
 //Templates
+import './templates/start-screen'
+import './templates/game-field'
+import './templates/game-over'
+
 import './templates/controls'
 import './templates/banner'
 import './templates/trash-bin'
-import './templates/start-screen'
-import './templates/game-field'
 import './templates/trash'
