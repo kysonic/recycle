@@ -38,7 +38,7 @@ Note: you can replace *yarn* on *npm* for all of following examples.
 
     yarn run build
     
-###Contributing
+### Contributing
 
 - Fork the repo
 - Crate new branch called according to your basic idea.
