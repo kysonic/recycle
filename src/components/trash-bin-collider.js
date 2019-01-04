@@ -21,9 +21,11 @@ AFRAME.registerComponent('trash-bin-collider', {
             if (binType == trashType) {
                 this.scene.emit('increaseScore', {points: 10});
                 this.scene.emit('runIndicator', {text: '+10', textColor: '#40EA00', startPosition: trash.getAttribute('position')});
+                this.scene.emit('level-up-sound');
             } else {
                 this.scene.emit('runIndicator', {text: '-1', textColor: '#FF7D7D', startPosition: trash.getAttribute('position')});
                 this.scene.emit('decreaseLives', {points: 1});
+                this.scene.emit('fail-sound');
             }
 
         }

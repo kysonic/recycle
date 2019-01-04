@@ -9,16 +9,31 @@ AFRAME.registerComponent('game-field-manager', {
         this.trashSystem = this.el.sceneEl.systems.trash;
         this.trashBinSystem = this.el.sceneEl.systems['trash-bin'];
         this.countdown = this.el.sceneEl.querySelector('#countdown');
+        this.sound = this.el.sceneEl.querySelector('#gameFieldSound');
         // Binds
         this.startWave = this.startWave.bind(this);
         this.startNextLevel = this.startNextLevel.bind(this);
         this.dropPreviousLevel = this.dropPreviousLevel.bind(this);
+        this.levelUpSound = this.levelUpSound.bind(this);
+        this.failSound = this.failSound.bind(this);
         // Countdown
         this.el.sceneEl.addEventListener('countdown-stopped', this.startWave);
         this.el.sceneEl.addEventListener('start-next-level', this.startNextLevel);
         this.el.sceneEl.addEventListener('drop-previous-level', this.dropPreviousLevel);
+        this.el.sceneEl.addEventListener('level-up-sound', this.levelUpSound);
+        this.el.sceneEl.addEventListener('fail-sound', this.failSound);
         // Start level 1
         this.startNextLevel();
+    },
+
+    levelUpSound() {
+        this.sound.setAttribute('sound', {src: '#levelUp'});
+        this.sound.components.sound.playSound();
+    },
+
+    failSound() {
+        this.sound.setAttribute('sound', {src: '#fail'});
+        this.sound.components.sound.playSound();
     },
 
     remove() {

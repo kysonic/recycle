@@ -40,7 +40,7 @@ export default function waveGenerator(waveNumber) {
             maxPosition: {
                 x: 1,
                 y: 1.5,
-                z: 1.5
+                z: 1
             }
         }
     }

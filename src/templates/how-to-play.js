@@ -18,5 +18,5 @@ AFRAME.registerTemplate('how-to-play', `
         ></a-plane>
     
     
-    <a-template name="button" options="text: BACK; position: -0.15 0.5 -4; event: back; color: #5e9696"></a-template>
+    <a-template name="button" options="text: BACK; position: -0.15 0.5 -4; event: back; color: #5e9696; opacity: 0"></a-template>
 `);

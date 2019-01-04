@@ -19,6 +19,8 @@ import './components/controls-checker';
 import './components/restrict-position';
 import './components/game-manager';
 import './components/throw-controls';
+import './components/loading';
+import './components/floor-collider';
 //Templates
 import './templates/start-screen'
 import './templates/game-field'
