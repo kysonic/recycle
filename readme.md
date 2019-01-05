@@ -13,14 +13,14 @@ recycle the trash otherwise, your lives will be reduced as well. In case if you 
 ### Supported devices 
 
 - Desktop: Mac \ PC  
-- Headsets: Oculus Rift, HTC Vice
+- Headsets: Oculus Rift, HTC Vive
 - Mobile headsets: Oculus Go, Gear VR
 
 ### Partial support: 
 
 - Cardboards. You can grab the trash but you cannot throw it because usually cardboards support only one button... So you can just nod your head but it's not so comfortable.
 
-### [Play the game online](https://recyclevr.neocities.org/)
+### [PLAY THE GAME ONLINE](https://recyclevr.neocities.org/)
 
 ## DEVELOPMENT 
 
