@@ -23,7 +23,6 @@ AFRAME.registerTemplate('game-field', `
         <audio id="fail" src="/assets/sounds/fail.wav" preload></audio>
     </a-sub-assets>
     <a-template name="button" options="text: EXIT; position: 0 1 4; rotation: 0 180 0; event: stop-game"></a-template>
-    
     <a-entity id="indicator" 
               indicator
               visible="false"
