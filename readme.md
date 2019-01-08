@@ -20,7 +20,7 @@ recycle the trash otherwise, your lives will be reduced as well. In case if you 
 
 - Cardboards. You can grab the trash but you cannot throw it because usually cardboards support only one button... So you can just nod your head but it's not so comfortable.
 
-### [PLAY THE GAME ONLINE](https://recyclevr.neocities.org/)
+### [PLAY THE GAME ONLINE](http://bit.ly/2LWcDd2)
 
 ## DEVELOPMENT 
 
@@ -49,6 +49,12 @@ Note: you can replace *yarn* on *npm* for all of following examples.
 
 This program is free software and is distributed under an [MIT License](https://github.com/kysonic/recycle/blob/master/LICENSE).  
 You can use as a boilerplate for your games. You can take all of models\sounds\images and change it whatever you want.  
+
+### Roadmap
+
+- Interactive tutorial during the first launch of game
+- Enhanced trash models
+- Supporting of mobile phones 
 
 ## Credits 
 
