@@ -26,6 +26,10 @@ AFRAME.registerComponent('trash', {
         this.el.addEventListener('model-loaded', this.onModelLoaded);
         this.el.addEventListener('hover-start', this.onHover);
         this.el.addEventListener('hover-end', this.onHoverEnd);*/
+        this.el.addEventListener('grab-start', () => {
+            console.log('GRAB START');
+            this.el.sceneEl.emit('grab-start')
+        });
     },
 
     onModelLoaded(e) {

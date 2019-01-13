@@ -132,5 +132,7 @@ AFRAME.registerComponent('throw-controls', {
         const z = (directionZ / vectorsLength) * this.force;
 
         this.grabbed.body.velocity.set(x , y,  z );
+
+        this.el.sceneEl.emit('trash-thrown', {trash: this.grabbed});
     }
 });

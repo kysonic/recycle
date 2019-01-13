@@ -69,7 +69,7 @@ AFRAME.registerComponent('game-manager', {
 
     checkState() {
         if (GAME_STATES.inProgress === this.el.systems.state.state.gameState) {
-            if(this.el.systems.state.state.lives < 1) {
+            if(this.el.systems.state.state.lives < 1 || this.el.systems.state.state.currentWave >= 13) {
                 setTimeout(()=> {
                     this.gameOver();
                 }, 1000)

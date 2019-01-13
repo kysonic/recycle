@@ -71,6 +71,7 @@ AFRAME.registerComponent('game-field-manager', {
         if(this.el.sceneEl.systems.state.state.gameState !== GAME_STATES.inProgress) {
             return false;
         }
+        this.el.emit('start-wave', {currentWave: this.el.sceneEl.systems.state.state.currentWave});
         this.trashSystem.startTrashWave();
     }
 });

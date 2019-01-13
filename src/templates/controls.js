@@ -1,5 +1,7 @@
 import AFRAME from 'aframe';
 
+import '../components/tutorial';
+
 const COUNTDOWN_TEXT = ['READY', 'STEADY', 'RECYCLE!'];
 
 AFRAME.registerTemplate('controls', `
@@ -36,7 +38,7 @@ AFRAME.registerTemplate('controls', `
                      scale="0 1 0"
                      anime="property: scale; from: 0 1 0; to: 1 1 0; dur: 2500; startEvents: force-range-start; pauseEvents: force-range-stop" 
             ></a-plane>
-            
+            <a-entity tutorial text="align: center; width: 1.5; color: white; value:" position="0 0.1 -1.5"></a-entity>
             <a-entity id="countdown" position="0 0 -1" countdown="text: ${COUNTDOWN_TEXT}; interval: 1000"></a-entity>
         </a-camera>
     </a-entity>
