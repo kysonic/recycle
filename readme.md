@@ -52,7 +52,7 @@ You can use as a boilerplate for your games. You can take all of models\sounds\i
 
 ### Roadmap
 
-- Interactive tutorial during the first launch of game
+- Interactive tutorial during the first launch of game [Done]
 - Enhanced trash models
 - Supporting of mobile phones 
 
