@@ -20,6 +20,9 @@ AFRAME.registerComponent('controls-checker', {
     },
     init() {
         this.headsetConnected = utils.device.checkHeadsetConnected();
+        if(this.headsetConnected && window.ga) {
+            window.ga('send', 'event', 'device', 'headset');
+        }
         this.isMobile = utils.device.isMobile();
         this.isDesktop = this.headsetConnected && !this.isMobile;
         this.isGearVR = utils.device.isGearVR();
