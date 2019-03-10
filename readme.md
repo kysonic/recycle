@@ -56,9 +56,4 @@ You can use as a boilerplate for your games. You can take all of models\sounds\i
 - Enhanced trash models
 - Supporting of mobile phones 
 
-## Credits 
-
-**Author**: Anton Miroshnichenko.  
-**Thanks for 2D graphics**: Elena Prelestnaya. 
-
 
