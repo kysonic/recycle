@@ -1,5 +1,3 @@
-import AFRAME from 'aframe';
-
 AFRAME.registerComponent('restrict-position', {
     schema: {
     },

@@ -1,11 +1,12 @@
-import AFRAME, {utils} from 'aframe';
-
 AFRAME.registerComponent('how-to-play', {
-    schema: {},
-    init() {
-        this.headsetConnected = utils.device.checkHeadsetConnected();
-        if(this.headsetConnected) {
-            this.el.setAttribute('src', '#hdst');
-        }
-    }
+  schema: {},
+  init() {
+    setTimeout(() => {
+      this.checkDevice();
+    }, 0);
+  },
+  checkDevice() {
+    this.headsetConnected = AFRAME.utils.device.checkHeadsetConnected();
+    document.getElementById('hot-to-plane').setAttribute('src', this.headsetConnected ? '#hdst' : '#dsktp' )
+  },
 });

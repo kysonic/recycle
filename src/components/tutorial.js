@@ -1,5 +1,3 @@
-import AFRAME, {utils} from 'aframe';
-
 AFRAME.registerComponent('tutorial', {
     schema: {},
     init() {
@@ -11,7 +9,7 @@ AFRAME.registerComponent('tutorial', {
             this.grabStart = this.grabStart.bind(this);
             this.tutorialEnd = this.tutorialEnd.bind(this);
 
-            this.headsetConnected = utils.device.checkHeadsetConnected();
+            this.headsetConnected = AFRAME.utils.device.checkHeadsetConnected();
 
             this.el.sceneEl.addEventListener('start-game', this.bindGameListeners);
             this.el.sceneEl.addEventListener('stop-game', this.removeGameListeners);

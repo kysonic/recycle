@@ -1,5 +1,3 @@
-import AFRAME from 'aframe';
-
 AFRAME.registerComponent('countdown', {
     schema: {
         currentItem: {
@@ -49,7 +47,7 @@ AFRAME.registerComponent('countdown', {
     },
 
     setupAnimation() {
-        this.el.setAttribute('anime__scale', `${this.data.animation}dur: ${this.data.interval}; startEvents: countdown-run-phrase; pauseEvents: countdown-pause-phrase`);
+        this.el.setAttribute('animation__scale', `${this.data.animation}dur: ${this.data.interval}; startEvents: countdown-run-phrase; pauseEvents: countdown-pause-phrase`);
     },
 
     styleText() {

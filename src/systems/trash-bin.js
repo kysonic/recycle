@@ -1,28 +1,26 @@
-import AFRAME from 'aframe';
-
 AFRAME.registerSystem('trash-bin', {
-    bins: [],
+  bins: [],
 
-    init() {
-        this.createBin = this.createBin.bind(this);
-    },
+  init() {
+    this.createBin = this.createBin.bind(this);
+  },
 
-    createBins(trashBins) {
-        trashBins.forEach(this.createBin);
-    },
+  createBins(trashBins) {
+    trashBins.forEach(this.createBin);
+  },
 
-    createBin(binData) {
-        AFRAME.templates['trash-bin'].init(binData);
-    },
+  createBin(binData) {
+    this.sceneEl.systems.prefabs.instantiate('trashBin', binData);
+  },
 
-    registerBin(bin) {
-        this.bins.push(bin);
-    },
+  registerBin(bin) {
+    this.bins.push(bin);
+  },
 
-    dropBins() {
-        this.bins.forEach((bin) => {
-           this.el.removeChild(bin.el);
-        });
-        this.bins = [];
-    }
+  dropBins() {
+    this.bins.forEach((bin) => {
+      bin.el.parentNode.removeChild(bin.el);
+    });
+    this.bins = [];
+  },
 });
