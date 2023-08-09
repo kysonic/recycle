@@ -8,11 +8,10 @@ export default ({
 <a-entity
        id="trash-${id}"
        body="type: dynamic; mass: ${mass}; shape: none;"
-       shape__main="${shape}"
+       shape="${shape}"
        grabbable
        draggable
        droppable
-       id="trash-plastic"
        class="dnd"
        trash="type: ${type}"
        gltf-model="#${type}"
