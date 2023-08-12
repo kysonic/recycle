@@ -4,33 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kysonic/a-frame-router-templates@0.0.2/dist/assets/index.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
     <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
     <script src="https://unpkg.com/aframe-state-component@7.1.0/dist/aframe-state-component.min.js"></script>
     <script type="module" src="src/main.js"></script>
     <title>Recycle</title>
+    <script>
+      window.html = (strings, ...values) =>
+        String.raw({ raw: strings }, ...values);
+    </script>
   </head>
   <body>
-    <a-scene
-      game-manager
-      router="current: start-screen"
-      physics="debug: false;"
-      hud
-    >
-      <a-assets> 
-        {{> common/assets}}
-        {{> common/mixins}}
-      </a-assets>
-      {{> common/sounds}}
-      {{> common/lights}}
-      {{> common/environment}}
-      {{> common/controls}}
-      {{> ui/banner}}
-      {{> routes/start-screen}} 
-      {{> routes/game-field}} 
-      {{> routes/how-to-play}}
-      {{> routes/game-over}}
+    <a-scene game-manager physics="debug: false;" hud>
+      <!-- Templates -->
+      <a-template name="assets" />
+      <a-template name="mixins" />
+      <a-template name="controls" />
+      <a-template name="environment" />
+      <a-template name="lights" />
+      <a-template name="sounds" />
+      <a-template name="banner" />
+      <!-- Templates -->
+      <!-- Routes -->
+      <a-route id="start-screen" template="start-screen"></a-route>
+      <a-route id="game-field" template="game-field"></a-route>
+      <a-route id="game-over" template="game-over"></a-route>
+      <a-route id="how-to-play" template="how-to-play"></a-route>
+      <!-- Routes -->
     </a-scene>
   </body>
 </html>

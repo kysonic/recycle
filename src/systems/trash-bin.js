@@ -10,7 +10,7 @@ AFRAME.registerSystem('trash-bin', {
   },
 
   createBin(binData) {
-    this.sceneEl.systems.prefabs.instantiate('trashBin', binData);
+    AFRAME.templates['trash-bin'].instance(binData);
   },
 
   registerBin(bin) {

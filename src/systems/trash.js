@@ -93,7 +93,7 @@ AFRAME.registerSystem('trash', {
   },
 
   createTrash(trashData) {
-    this.sceneEl.systems.prefabs.instantiate('trash', trashData);
+    AFRAME.templates['trash'].instance(trashData);
   },
 
   registerTrash(trash) {
